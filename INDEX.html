@@ -43,7 +43,6 @@
       z-index: 3;
     }
 
-    /* UPDATED subtitle */
     p.subtitle {
       margin-top: 0;
       color: #ffeecf;
@@ -206,7 +205,7 @@
       50% { transform: rotate(2deg); }
     }
 
-    /* SLEIGH (moved to bottom) */
+    /* SLEIGH (bottom) */
     .santa-sleigh {
       position: absolute;
       bottom: 70px;
@@ -238,7 +237,6 @@
 <body>
 
   <h1>12 Days of Support 🎄</h1>
-  <!-- UPDATED: subtitle text -->
   <p class="subtitle">Click to unwrap…</p>
 
   <!-- Jingle Bells audio -->
@@ -248,7 +246,7 @@
     preload="auto">
   </audio>
 
-  <!-- Sleigh only -->
+  <!-- Sleigh at the bottom -->
   <div class="santa-sleigh">
     <span>🎅</span><span>🦌🦌🦌</span><span>🛷</span>
   </div>
@@ -262,7 +260,7 @@
   <div class="tree">🎄</div>
 
   <script>
-    /* UPDATED METRICS — removed “Day XX – ” */
+    /* Metrics (no “Day XX – ”) */
     const dayMessages = [
       "Over 40K Issues resolved 🌟",
       "91% of Issues were resolved within the first contact ⏱️",
@@ -281,7 +279,7 @@
     const startDay = 13;
     const calendarEl = document.getElementById("calendar");
 
-    /* Jingle Bells on first click */
+    /* Music on first click */
     let musicStarted = false;
     function startMusic() {
       if (!musicStarted) {
@@ -362,211 +360,5 @@
 </body>
 </html>
 
-
-
-  <div id="snow-container"></div>
-
-  <div class="calendar-wrapper">
-    <div class="calendar" id="calendar"></div>
-  </div>
-
-  <div class="tree">🎄</div>
-
-  <script>
-     /* -----------------------
-       2025 Customer Support Accomplishments
-    -------------------------*/
-    const dayMessages = [
-      "Day 13 – Over 40K Issues resolved ",
-      "Day 14 – 91% of Issues were resolved within the first contact ",
-      "Day 15 – ###### of address’ were forwarded ",
-      "Day 16 – Customer Support’s property audits have expanded the number of potential offers shown to customers, improved reliability of provider data, & unlocked new serviceability knowledge.”,
-      "Day 17 – 98.2% Service Level was achieved ",
-      "Day 18 – Customer Support has configured over 227,000 Greystar units upgrading them from UP to UPO 📈",
-      "Day 19 – ## New processes were developed and SOPs created. ",
-      "Day 20 – 224 Jira Bugs were escalated. ",
-      "Day 21 – Fully integrated AI into Zendesk ",
-      "Day 22 – Something",
-      "Day 23 – Maintained an A+ BBB for all of 2025",
-      "Day 24 – Happy Holidays from your Customer Support team!! Celebrate success & plan for 2026! 🎉"
-    ];
-
-    const startDay = 13;
-    const calendarEl = document.getElementById("calendar");
-
-    // Jingle Bells music control (starts on first click)
-    let musicStarted = false;
-    function startMusic() {
-      if (!musicStarted) {
-        const audio = document.getElementById("jingle");
-        if (audio) {
-          audio.volume = 0.4;
-          audio.loop = true;
-          audio.play().catch(() => {});
-          musicStarted = true;
-        }
-      }
-    }
-
-    // Create presents
-    dayMessages.forEach((message, index) => {
-      const dayNum = startDay + index;
-
-      const door = document.createElement("div");
-      door.className = "door";
-
-      const inner = document.createElement("div");
-      inner.className = "door-inner";
-
-      // Front (present)
-      const front = document.createElement("div");
-      front.className = "door-front";
-
-      const bow = document.createElement("div");
-      bow.className = "present-bow";
-      bow.textContent = "🎀";
-
-      const number = document.createElement("div");
-      number.className = "present-number";
-      number.textContent = dayNum;
-
-      const tag = document.createElement("div");
-      tag.className = "present-tag";
-      tag.innerHTML = "<span>To Updater</span><span>From Customer Support</span>";
-
-      front.appendChild(bow);
-      front.appendChild(number);
-      front.appendChild(tag);
-
-      // Back (metric text)
-      const back = document.createElement("div");
-      back.className = "door-back";
-
-      const content = document.createElement("div");
-      content.className = "door-back-content";
-      content.textContent = message;
-
-      back.appendChild(content);
-
-      inner.appendChild(front);
-      inner.appendChild(back);
-      door.appendChild(inner);
-
-      door.addEventListener("click", () => {
-        startMusic();
-        door.classList.toggle("opened");
-      });
-
-      calendarEl.appendChild(door);
-    });
-
-    /* SNOW */
-    const snowContainer = document.getElementById("snow-container");
-    function createSnowflake() {
-      const snow = document.createElement("div");
-      snow.className = "snowflake";
-      snow.textContent = "❄";
-      snow.style.left = Math.random() * 100 + "vw";
-      snow.style.animationDuration = 5 + Math.random() * 7 + "s";
-      snow.style.opacity = 0.5 + Math.random() * 0.5;
-      snow.style.fontSize = (1 + Math.random() * 1.2) + "rem";
-      snowContainer.appendChild(snow);
-      setTimeout(() => snow.remove(), 13000);
-    }
-    setInterval(createSnowflake, 220);
-  </script>
-
-</body>
-</html>
-
-
-    ];
-
-    const startDay = 13;
-    const calendarEl = document.getElementById("calendar");
-
-    // ---- Jingle Bells music control ----
-    let musicStarted = false;
-    function startMusic() {
-      if (!musicStarted) {
-        const audio = document.getElementById("jingle");
-        if (audio) {
-          audio.volume = 0.4;   // adjust volume (0.0–1.0)
-          audio.loop = true;    // keep playing
-          audio.play().catch(() => {}); // ignore autoplay errors just in case
-          musicStarted = true;
-        }
-      }
-    }
-
-    dayMessages.forEach((message, index) => {
-      const dayNum = startDay + index;
-
-      const door = document.createElement("div");
-      door.className = "door";
-
-      const inner = document.createElement("div");
-      inner.className = "door-inner";
-
-      /* FRONT (present) */
-      const front = document.createElement("div");
-      front.className = "door-front";
-
-      const bow = document.createElement("div");
-      bow.className = "present-bow";
-      bow.textContent = "🎀";
-
-      const number = document.createElement("div");
-      number.className = "present-number";
-      number.textContent = dayNum;
-
-      const tag = document.createElement("div");
-      tag.className = "present-tag";
-      tag.textContent = "Open me";
-
-      front.appendChild(bow);
-      front.appendChild(number);
-      front.appendChild(tag);
-
-      /* BACK (metric text only — NO DAY LABEL) */
-      const back = document.createElement("div");
-      back.className = "door-back";
-
-      const content = document.createElement("div");
-      content.className = "door-back-content";
-      content.textContent = message;
-
-      back.appendChild(content);
-
-      inner.appendChild(front);
-      inner.appendChild(back);
-      door.appendChild(inner);
-
-      door.addEventListener("click", () => {
-        startMusic();                 // ⬅️ start Jingle Bells on first click
-        door.classList.toggle("opened");
-      });
-
-      calendarEl.appendChild(door);
-    });
-
-    /* SNOW */
-    const snowContainer = document.getElementById("snow-container");
-    function createSnowflake() {
-      const snow = document.createElement("div");
-      snow.className = "snowflake";
-      snow.textContent = "❄";
-      snow.style.left = Math.random() * 100 + "vw";
-      snow.style.animationDuration = 5 + Math.random() * 7 + "s";
-      snow.style.opacity = 0.5 + Math.random() * 0.5;
-      snow.style.fontSize = (1 + Math.random() * 1.2) + "rem";
-      snowContainer.appendChild(snow);
-      setTimeout(() => snow.remove(), 13000);
-    }
-    setInterval(createSnowflake, 220);
-  </script>
-
-</body>
-</html>
 
 
